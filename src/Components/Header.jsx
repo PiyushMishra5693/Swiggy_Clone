@@ -33,8 +33,8 @@ const Header= ()=>{
              <div className="grid place-items-center">
                 {
                     isAuthenticated ?( <div className="flex">
-                        <img className="w-[100px]" src={user.picture} alt={user.name} />
-                        <h2 className="p-5 text-lg text-black ">{'Welcome, '+user.name}</h2>
+                        <img className=" w-[100px] rounded-full" src={user.picture} alt={user.name} />
+                        <h2 className="p-5 text-lg text-blue-600 ">{'Welcome, '+user.name}</h2>
                         {/* <p className="p-5">{user.email}</p> */}
                       </div>)
                     :(
@@ -53,6 +53,8 @@ const Header= ()=>{
              <div className="flex items-center">
                  <ul className="flex p-4 m-4 ">
 
+                    
+                    <li></li>
                     <li className="">
                         Online Status:{online?"🟢":"🔴"}
                     </li>

@@ -146,9 +146,11 @@ async function fetchdata404(){
 
 async function fetchdata1(){
 
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4609559&lng=77.49693789999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-        const json= await data.json();
-        const rest_array=json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        
+        try{
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4609559&lng=77.49693789999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const json= await data.json();
+            const rest_array=json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
      
              
             //   console.log(rest_array);
@@ -161,6 +163,13 @@ async function fetchdata1(){
                      set_rest_array(rest_array);
                      set_filter_rest_array(rest_array);
              }
+
+        }
+
+        catch(err){
+            console.log(err);
+        }
+        
 
 
     }
@@ -190,7 +199,7 @@ async function fetchdata1(){
 
                             }}>Search</button>
                         
-                </div>
+                    </div>
                  
                     <div className="p-4 m-4">
                         

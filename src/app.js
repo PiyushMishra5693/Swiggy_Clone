@@ -12,9 +12,13 @@ import Contact from "./Components/Contact";
 import { Provider } from "react-redux";
 import appstore from "./Components/utils/Appstore";
 
-
+// Authentication
 import { Auth0Provider } from '@auth0/auth0-react';
 import Cart from "./Components/Cart";
+
+import Payment from "./Components/Payment";
+
+
 
 
 /* 
@@ -77,6 +81,10 @@ const approuter= createBrowserRouter([
             {
                 path:'/cart',
                 element:<Cart/>
+            },
+            {
+                path:'/payment',
+                element:<Payment/>
             }
 
         ],

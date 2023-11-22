@@ -3,6 +3,7 @@ import { clearCart } from "./utils/cardSlice";
 import { IMAGE_URL } from "./utils/constant";
 import { useDispatch } from "react-redux";
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const Cart = ()=>{
@@ -73,7 +74,7 @@ const Cart = ()=>{
                     {  cartItems.length!==0&&(
                             <div>
                                 <h2 className="text-center text-bold bg-green text-green-500 text-xl">To Pay : ₹ {totalAmount}</h2>
-                                <button className="m-4 p-4  bg-green-500 hover:bg-green-600 rounded-lg" >Procced Payment</button>
+                                <button className="m-4 p-4  bg-green-500 hover:bg-green-600 rounded-lg"><Link to="/payment">Procced Payment</Link></button>
                             </div>
                             
 
