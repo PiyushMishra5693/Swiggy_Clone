@@ -10,27 +10,27 @@ const Payment = ()=>{
 
     return(
     
-        <div className="h-[87vh]  grid place-items-center ">
+        <div className="h-[87vh]  grid place-items-center bg-gray-800">
 
-                <div className="w-[500px] h-[500px] p-5 rounded-lg border-[10px]  border-blue-600 ">
+                <div className="w-[500px] h-[500px] p-5 rounded-lg border-[10px]  border-blue-600  bg-gray-300">
                             
                             <h1 className='font-bold font-[cursive] text-3xl text-stone-900 ' >Payment Detail</h1>
                             
                             
                                 <div className='flex mt-8 justify-between' >
                                     
-                                    <div className="w-[120px] h-[100px]  border-[5px] border-blue-600 rounded-lg grid place-items-center" >
-                                            <FaCreditCard  color='orange' size='30px'/>
+                                    <div className="w-[120px] h-[100px]  border-[5px] border-blue-500 rounded-lg grid place-items-center" >
+                                            <FaCreditCard  color='gray' size='30px'/>
                                             <h3 className='font-bold'>Card</h3>
                                             
                                     </div>
-                                    <div className="w-[120px] h-[100px]  border-[5px] border-blue-600 rounded-lg grid place-items-center" >
-                                            <FaIdeal  color='green' size='30px'/>
-                                            <h3 className='font-mono font-bold font-blue-1'>iDeal</h3>
+                                    <div className="w-[120px] h-[100px]  border-[5px] border-gray-500 rounded-lg grid place-items-center" >
+                                            <FaIdeal  color='black' size='30px'/>
+                                            <h3 className='font-mono font-bold'>iDeal</h3>
                                             
                                     </div>
-                                    <div className="w-[120px] h-[100px]  border-[5px] border-blue-600 rounded-lg grid place-items-center" >
-                                            <SiKlarna   color='blue' size='30px'/>
+                                    <div className="w-[120px] h-[100px]  border-[5px] border-gray-500 rounded-lg grid place-items-center" >
+                                            <SiKlarna   size='30px'/>
                                             <h3 className='font-bold'>Klarna</h3>
                                             
                                     </div>

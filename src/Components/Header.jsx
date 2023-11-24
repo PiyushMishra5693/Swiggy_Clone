@@ -39,7 +39,7 @@ const Header= ()=>{
                       </div>)
                     :(
                         <div className="flex">
-                            <img className="w-[100px]" src="https://i.ibb.co/vcmKwkc/guest.png" />
+                            <img className="w-[100px] rounded-full" src="https://i.ibb.co/vcmKwkc/guest.png" />
                             <h1 className="p-5 text-lg text-white">Welcome Guest </h1>
                         </div>
                     )
