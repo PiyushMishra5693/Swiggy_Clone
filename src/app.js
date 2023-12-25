@@ -32,7 +32,6 @@ import Payment from "./Components/Payment";
     Footer
         . Contact-US
         . Copyright
-        . Contact-US
  */
 
 

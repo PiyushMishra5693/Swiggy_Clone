@@ -13,8 +13,9 @@ const cardSlice = createSlice({
         addItem:(state,action)=>{
             state.items.push(action.payload);
         },
-        removeItem:(state)=>{
-            state.items.pop();
+        removeItem:(state,action)=>{
+            // const index=action.payload;
+            // state.items=  state.items.filter( (obj)=> obj.card.info.id!== index.card.info.id)
         },
         clearCart:()=>{
             // state.items.length=0;

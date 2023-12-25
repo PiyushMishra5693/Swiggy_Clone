@@ -10,7 +10,7 @@ const Payment = ()=>{
 
     return(
     
-        <div className="h-[87vh]  grid place-items-center bg-gray-800">
+        <div className="h-[87vh] bg-gray-800 flex justify-center items-center">
 
                 <div className="w-[500px] h-[500px] p-5 rounded-lg border-[10px]  border-blue-600  bg-gray-300">
                             

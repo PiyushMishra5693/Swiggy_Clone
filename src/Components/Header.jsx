@@ -24,7 +24,7 @@ const Header= ()=>{
 
 
     return (
-         <div className="flex justify-between bg-orange-400 shadow-lg ">
+         <div className=" bg-fixed flex justify-between bg-orange-400 shadow-lg ">
  
              {/* <div className="w-40">
              <img className="logo" src={HEADER_URL}></img>
@@ -34,8 +34,8 @@ const Header= ()=>{
                 {
                     isAuthenticated ?( <div className="flex">
                         <img className=" w-[100px] rounded-full" src={user.picture} alt={user.name} />
-                        <h2 className="p-5 text-lg text-blue-600 ">{'Welcome, '+user.name}</h2>
-                        {/* <p className="p-5">{user.email}</p> */}
+                        <h2 className="p-5 text-lg text-white">{'Welcome, '+user.name}</h2>
+                        <h2 className="pt-[50px] ml-[120px] absolute text-lg text-gray-800 hover:font-bold hover:text-violet-500">Email:    {user.email}</h2>
                       </div>)
                     :(
                         <div className="flex">
@@ -47,7 +47,7 @@ const Header= ()=>{
              </div>
 
             <div className="flex p-[30px]">
-                     <h1 className=" text-white font-bold text-4xl font-[cursive]"> Swiggy </h1>
+                <Link to="/">   <h1 className=" text-white font-bold text-4xl font-[cursive] "> Swiggy </h1> </Link>
             </div>
              
              <div className="flex items-center">

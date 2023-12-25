@@ -28,6 +28,7 @@ const Body = ()=>{
 
     useEffect(()=>{
         fetchdata1();
+
     },[]);
 
 
@@ -50,7 +51,7 @@ const Body = ()=>{
 
 
 
-async function fetchdata2(){
+async function fetch_data_by_area(){
     
     const area= searchText.split(" ").join('%20');   
 
@@ -93,56 +94,8 @@ async function fetchdata2(){
         console.log(err);
     }
 
-    
-      
-
-
 }
-async function fetchdata404(){
 
-
-         const area= "Delhi".split(" ").join('%20');   
-
-         try{
-             const coor_data = await fetch(`https://www.mapquestapi.com/geocoding/v1/address?key=lVn1m098kcE2Ea5DWGcogz0jEEy68hFz&location=${area}`)
-             const coor_json= await coor_data.json();
-     
-             const lat=coor_json.results[0].locations[0].latLng.lat.toString();
-             const long=coor_json.results[0].locations[0].latLng.lng.toString();
-     
-     
-             if(lat ===undefined && long ===undefined){
-                 alert('Invalid location');
-                 return;
-             }
-             const data = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${long}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
-             
-             const json= await data.json();
-     
-     
-             
-              const rest_array=json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-     
-             
-            //   console.log(rest_array);
-              
-              if(rest_array===undefined){
-                 alert('No location found in the Map');
-              }
-             
-             if(rest_array.length>0){
-                     set_rest_array(rest_array);
-                     set_filter_rest_array(rest_array);
-             }
-     
-         }
-     
-         catch(err){
-     
-             console.log(err);
-         }
-   
-}
 
 async function fetchdata1(){
 
@@ -191,7 +144,7 @@ async function fetchdata1(){
                                 // });
 
                                 // set_filter_rest_array(filter_array);
-                                fetchdata2();
+                                fetch_data_by_area();
 
                                 if(searchText===""){
                                     alert("Enter a location to continue...");
