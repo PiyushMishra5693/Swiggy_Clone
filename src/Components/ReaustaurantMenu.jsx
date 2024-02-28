@@ -15,8 +15,8 @@ const ReaustaurantMenu = ()=>{
     if(resInfo===null){
         return <Shimmer></Shimmer>
     }
-
-    const { name,city,cuisines,costForTwoMessage,avgRatingString,totalRatingsString,cloudinaryImageId}= resInfo?.data?.cards[0]?.card?.card?.info;
+    
+    const {name, city,cuisines,costForTwoMessage,avgRatingString,totalRatingsString,cloudinaryImageId}= resInfo?.data?.cards[0]?.card?.card?.info;
 
     const deliveryTime=resInfo?.data.cards[0].card.card.info.sla.deliveryTime;
 

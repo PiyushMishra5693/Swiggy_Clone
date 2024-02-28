@@ -17,6 +17,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import Cart from "./Components/Cart";
 
 import Payment from "./Components/Payment";
+import Footer from "./Components/Footer";
+
 
 
 
@@ -44,7 +46,7 @@ const Applayout =()=>{
         <div className="App">
                 <Header></Header>
                 <Outlet/>
-            
+                <Footer></Footer>
         </div>
         </Provider>
     )

@@ -1,8 +1,7 @@
 import ReaustauranCard from "./Reaustaurant-card";
 import  {useState, useEffect} from "react";
 import Shimmer from "./utils/Shimmer"
-import { Link, json } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import useOnlineStatus from "./utils/useOnlineStatus";
 
 
@@ -38,12 +37,12 @@ const Body = ()=>{
 
 
     // Conditional Rendring
-    // if(rest_array.length===0){
+    if(rest_array.length===0){
 
-    //     return(
-    //         <Shimmer/>
-    //     )
-    // }
+        return(
+            <Shimmer/>
+        )
+    }
 
 
     
@@ -73,7 +72,7 @@ async function fetch_data_by_area(){
 
 
         
-         const rest_array=json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const rest_array=json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
         
          console.log(rest_array);
@@ -102,11 +101,13 @@ async function fetchdata1(){
         
         try{
             const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4609559&lng=77.49693789999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            
             const json= await data.json();
-            const rest_array=json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-     
-             
-            //   console.log(rest_array);
+
+            const rest_array=json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+
+
+            console.log(json.data.cards[0].card.card.imageGridCards.info);
               
               if(rest_array===undefined){
                  alert('No location found in the Map');
@@ -134,17 +135,17 @@ async function fetchdata1(){
                     <div className="flex justify-center">
                         
                         <div className="p-4 m-4">
-                            <input   className="w-64 p-2 rounded-l border border-gray-300" placeholder="Enter a place" type="text"  value={searchText} onChange={(e)=>{
+                            <input   className="w-64 p-2 rounded-l border border-gray-300" placeholder="Search Restaurant" type="text"  value={searchText} onChange={(e)=>{
                                 setSearchText(e.target.value);
                             }} ></input>
                             <button className="bg-blue-500 text-white p-2 rounded-r hover:bg-blue-600" onClick={()=>{
                                 
-                                // const filter_array = rest_array.filter((res)=> {
-                                //     return res.info.name.toLowerCase().includes(searchText.toLowerCase());
-                                // });
+                                const filter_array = rest_array.filter((res)=> {
+                                    return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+                                });
 
-                                // set_filter_rest_array(filter_array);
-                                fetch_data_by_area();
+                                set_filter_rest_array(filter_array);
+                                // fetch_data_by_area();
 
                                 if(searchText===""){
                                     alert("Enter a location to continue...");
@@ -163,7 +164,7 @@ async function fetchdata1(){
                         
                         <button className=" p-2 bg-blue-500 text-white rounded-sm hover:bg-blue-600" onClick={()=>{
                             
-                            console.log(star_rating); 
+                            // console.log(star_rating); 
                             const filter_res_list= rest_array.filter((res)=> res.info.avgRating >= star_rating);
 
                             set_filter_rest_array(filter_res_list);
@@ -195,8 +196,10 @@ async function fetchdata1(){
                 
               </div>
           
-           
+              
         </div>
+        
+
     )
 }
 
