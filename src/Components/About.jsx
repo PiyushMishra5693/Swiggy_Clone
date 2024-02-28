@@ -8,7 +8,7 @@ import img6 from "./assets/Corporate.png"
 // Technology   Business  Cloud Kitchen
 // Explore
 // Customer Care Campus   Corporate Support Functions
-About=()=>{
+const About=()=>{
 
     return (
 
