@@ -74,8 +74,6 @@ async function fetch_data_by_area(){
         
         const rest_array=json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
-        
-         console.log(rest_array);
 
          if(rest_array===undefined){
             alert('No location found in the Map');
@@ -107,7 +105,7 @@ async function fetchdata1(){
             const rest_array=json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
 
 
-            console.log(json.data.cards[0].card.card.imageGridCards.info);
+            // console.log(json.data.cards[0].card.card.imageGridCards.info);
               
               if(rest_array===undefined){
                  alert('No location found in the Map');

@@ -14,7 +14,7 @@ const ReaustauranCard=(props)=>{
             <h3 className="font-[cursive]">{resData.info.cuisines.slice(0,4).join(',')}</h3>
             <div className="flex justify-between">
                 <h4 className="font-bold text-md">{resData.info.costForTwo}</h4>
-                <h4 className="bg-green-400 rounded-md">{resData.info.avgRating} 🌟</h4>
+                <h4 className="bg-green-400 rounded-md py-2 px-1">{resData.info.avgRating} 🌟</h4>
             </div>
             
             <div className="flex">

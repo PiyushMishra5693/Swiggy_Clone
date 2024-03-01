@@ -24,7 +24,7 @@ const Header= ()=>{
 
 
     return (
-         <div className=" bg-fixed flex justify-between bg-orange-400 shadow-lg ">
+         <div className=" bg-fixed flex justify-between bg-orange-400 shadow-lg h-[18vh]">
  
              {/* <div className="w-40">
              <img className="logo" src={HEADER_URL}></img>
